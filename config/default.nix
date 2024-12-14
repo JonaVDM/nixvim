@@ -2,6 +2,7 @@
   # Import all your configuration modules here
   imports = [
     ./lsp.nix
+    ./navigation.nix
     ./ui.nix
   ];
 

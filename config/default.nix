@@ -1,6 +1,7 @@
 {
   # Import all your configuration modules here
   imports = [
+    ./git.nix
     ./lsp.nix
     ./navigation.nix
     ./ui.nix

@@ -5,6 +5,7 @@
     ./lsp.nix
     ./navigation.nix
     ./ui.nix
+    ./utils.nix
   ];
 
   colorschemes.catppuccin.enable = true;

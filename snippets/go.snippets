@@ -1,0 +1,61 @@
+.snippet test Generate a test case
+	func TestPadBytes(t *testing.T) {
+		testCases := []struct {
+			name     string
+		}{
+			{
+				name:     "With 8 byte",
+			},
+		}
+
+		for _, tc := range testCases {
+			t.Run(tc.name, func(t *testing.T) {
+				assert.DeepEqual(t, utils.PadBytes(tc.input), tc.expected)
+			})
+		}
+	}
+
+snippet convertToNumber
+	$1, _ := strconv.Atoi($2)
+
+snippet test
+	func Test$0(t *testing.T) {
+		tests := []struct {
+			in    int
+			out   int
+			label string
+		} {
+			{ 1, 2, "1 and 2" },	
+		}
+
+		for _, test := range tests {
+			assert.Equal(t, test.out, $0(test.in), test.label)
+		}
+	}
+
+snippet loop
+	for _, $1 := range $2 {
+		$0	
+	}
+
+snippet iferr
+	if err := $0; err != nil {
+		return err
+	}
+
+snippet error
+	if err != nil {
+		return err
+	}
+
+snippet testapiclient
+	t.Run("", func(t *testing.T) {
+		server := httptest.NewServer(http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {
+			assert.Equal(t, "/api/", req.URL.String())
+			assert.Equal(t, "GET", req.Method)
+			// t.Error("server should not be called")
+
+			rw.Write([]byte(``))
+		}))
+		defer server.Close()
+	})

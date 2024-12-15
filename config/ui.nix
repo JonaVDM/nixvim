@@ -15,6 +15,12 @@
       syncRootWithCwd = true;
     };
 
+    # Snacks still seems to be a bit of WIP
+    snacks = {
+      enable = true;
+    };
+
+    indent-blankline.enable = true;
     bufferline.enable = true;
     web-devicons.enable = true;
     lualine.enable = true;

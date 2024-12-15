@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   plugins = {
     luasnip = {
       enable = true;
@@ -58,7 +58,7 @@
           enable = true;
           settings = {
             nixpkgs.expr = "import <nixpkgs> { }";
-            formatting.command = ["alejandra"];
+            formatting.command = ["${pkgs.alejandra}/bin/alejandra"];
           };
         };
 

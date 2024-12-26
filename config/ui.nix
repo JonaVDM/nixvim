@@ -25,7 +25,11 @@
     web-devicons.enable = true;
     lualine.enable = true;
     headlines.enable = true;
-    treesitter.enable = true;
+
+    treesitter = {
+      enable = true;
+      settings.highlight.enable = true;
+    };
   };
 
   keymaps = [
